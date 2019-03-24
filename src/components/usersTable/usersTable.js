@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './usersTable.scss';
-import UsersList from '../users-list/usersList';
+import UsersList from '../usersList/usersList';
 
 class UsersTable extends Component {
 
@@ -17,7 +17,7 @@ class UsersTable extends Component {
             <th scope="col">E-mail</th>
             <th scope="col">City</th>
           </tr>
-                </thead>
+              </thead>
                 <tbody>
                   <UsersList />
                 </tbody>

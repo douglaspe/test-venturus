@@ -1,9 +1,9 @@
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../node_modules/fontawesome'
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import 'fontawesome'
 import React, { Component } from 'react';
 import './App.scss';
 
-import UsersTable from './components/users-table/usersTable';
+import UsersTable from '../usersTable/usersTable';
 
 class App extends Component {
   render() {
