@@ -1,17 +1,51 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUsers } from '../../actions';
-
 class UsersList extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.fetch = this.fetch.bind(this);
+
+    this.countPosts = this.countPosts.bind(this);
+    this.countAlbums = this.countAlbums.bind(this);
+    this.getAlbums = this.getAlbums.bind(this);
+    this.countPhotos = this.countPhotos.bind(this);
   }
 
-  fetch(){
-    this.props.fetchUsers();
+  countPosts(userId) {
+    const { posts } = this.props;
+    const postList =  posts.filter(function(post) {
+      return post.userId === userId;
+    });
+    return postList.length;
+  }
+
+  countAlbums(userId) {
+    const { albums } = this.props;
+    const albumList =  albums.filter(function(album) {
+      return album.userId === userId;
+    });
+    return albumList.length;
+  }
+
+  getAlbums(AlbumId) {
+    const { albums } = this.props;
+
+    const albumList =  albums.filter(function(album) {
+      return album.userId === AlbumId;
+    });
+
+    return albumList;
+  }
+
+  countPhotos(userId) {
+    const { photos } = this.props;
+    const abC = this.getAlbums(userId);
+
+    const photoList =  photos.filter(function(photo) {
+      return photo.albumId === abC.id;
+    });
+
+    return photoList.length;
   }
 
   render() {
@@ -35,6 +69,11 @@ class UsersList extends Component {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.address.city}</td>
+              <td>Always</td>
+              <td>Every day</td>
+              <td>{this.countPosts(user.id)}</td>
+              <td>{this.countAlbums(user.id)}</td>
+              <td>{this.countPhotos(user.id)}</td>
             </tr>
           );
         })}
@@ -45,9 +84,11 @@ class UsersList extends Component {
 
 const mapStateToProps = state => {
   return {
-    users: state.users
+    users: state.users,
+    posts: state.posts,
+    albums: state.albums,
+    photos: state.photos
   }
 }
 
-export default connect(mapStateToProps, {fetchUsers})(UsersList);
-
+export default connect(mapStateToProps)(UsersList);

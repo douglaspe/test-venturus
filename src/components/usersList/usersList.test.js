@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import UsersList from './usersList';
 
@@ -10,12 +10,6 @@ describe('<UsersList />', () => {
 
   it('should render <UsersList /> Component', () => {
       expect(wrapper.length).toBe(1);
-  });
-
-  it('Should render a username', () => {
-    const state = 'Leanne Graham';
-    console.log(state);
-    expect(state).toEqual("Leanne Graham");
   });
 
 });

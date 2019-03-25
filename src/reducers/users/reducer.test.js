@@ -1,4 +1,4 @@
-import { types } from '../../actions/types';
+import { FETCH_USER } from '../../actions/types';
 import usersReducer from './reducer';
 
 describe('Users Reducer', () => {
@@ -12,7 +12,7 @@ describe('Users Reducer', () => {
 
         const users = [];
         const newState = usersReducer(undefined, {
-          types: types.GET_USERS,
+          types: FETCH_USER,
           payload: users
         });
         expect(newState).toEqual(users);

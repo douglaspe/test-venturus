@@ -7,13 +7,16 @@ import './index.scss';
 
 import App from './components/app/App';
 import rootReducer from './reducers';
-import { fetchUsers } from './actions';
+import { fetchAllPosts, fetchAllUsers, fetchAllPhotos, fetchAllAlbums } from './actions';
 
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-store.dispatch(fetchUsers());
+store.dispatch(fetchAllUsers());
+store.dispatch(fetchAllPosts());
+store.dispatch(fetchAllPhotos());
+store.dispatch(fetchAllAlbums());
 
 ReactDOM.render(
   <Provider store={store}>
