@@ -7,7 +7,6 @@ const Header = (props) => {
   return (
       <header>
           <Logo />
-
     </header>
   )
 }

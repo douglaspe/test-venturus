@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './logo.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +10,9 @@ const Logo = (props) => {
       <div className="row">
         <div className="col-12">
           <div className="logo">
-            <h2><FontAwesomeIcon icon="igloo" /> Venturus Sports</h2>
+            <Link to="/">
+              <h2><FontAwesomeIcon icon="question" /> Venturus Sports</h2>
+            </Link>
           </div>
         </div>
       </div>

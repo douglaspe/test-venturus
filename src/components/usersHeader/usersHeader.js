@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import UserSearch from '../userSearch/userSearch'
 
-class UsersTable extends Component {
-
-  render() {
-
+const UsersTable = () => {
   return (
     <div className="container-fluid">
       <div className="row">
@@ -17,8 +14,7 @@ class UsersTable extends Component {
         </div>
       </div>
     </div>
-    );
-  }
+  )
 }
 
 export default UsersTable;

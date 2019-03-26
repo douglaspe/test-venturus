@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import './index.scss';
 
-import App from './components/app/App';
+import App from './app/App';
 import rootReducer from './reducers';
 import { fetchAllPosts, fetchAllUsers, fetchAllPhotos, fetchAllAlbums } from './actions';
 
