@@ -1,4 +1,4 @@
-import { SEARCH_USER, FETCH_USER } from '../../actions/types';
+import { SEARCH_USER } from '../../actions/types';
 
 const initialState = {
   newValue: ''

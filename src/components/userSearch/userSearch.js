@@ -16,10 +16,6 @@ class UserSearch extends Component {
   }
 
   render() {
-    const {
-      searchUser,
-      newValue
-    } = this.props;
 
   return (
     <form className="navbar-form navbar-left" role="search">

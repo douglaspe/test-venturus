@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import { ThroughProvider } from 'react-through';
 import './index.scss';
 
 import App from './app/App';
@@ -20,7 +21,9 @@ store.dispatch(fetchAllAlbums());
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ThroughProvider>
+      <App />
+    </ThroughProvider>
   </Provider> , document.getElementById('root'));
 
 

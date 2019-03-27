@@ -8,6 +8,6 @@ export default () =>
   <Switch>
     <Route exact path='/' component={UsersTable} />
     <Route exact path='/users' component={UsersTable}/>
-    <Route path='/users/:new' component={Registration} />
+    <Route exact path='/users/new' component={Registration} />
     <Redirect from='*' to='/' />
   </Switch>
